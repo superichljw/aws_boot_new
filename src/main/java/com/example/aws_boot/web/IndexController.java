@@ -1,6 +1,7 @@
 package com.example.aws_boot.web;
 
 
+import com.example.aws_boot.config.auth.LoginUser;
 import com.example.aws_boot.config.auth.dto.SessionUser;
 import com.example.aws_boot.service.posts.PostsService;
 import com.example.aws_boot.web.dto.PostsResponseDto;
@@ -20,9 +21,10 @@ public class IndexController {
     private final HttpSession httpSession;
 
     @GetMapping("/")
-    public String index(Model model){
+    public String index(Model model, @LoginUser SessionUser user){
         model.addAttribute("posts",postsService.findAllDesc());
-        SessionUser user = (SessionUser) httpSession.getAttribute("user");
+//        SessionUser user = (SessionUser) httpSession.getAttribute("user"); > 해당 코드는 loginuser 어노테이션으로 개선됨(중복이 제거됨)
+
 
         if(user != null){
             model.addAttribute("userName",user.getName());
