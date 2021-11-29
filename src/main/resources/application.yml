@@ -7,5 +7,7 @@ spring:
     show-sql: true
   profiles:
     include: oauth
+  session:
+    store-type: jdbc
 
 
