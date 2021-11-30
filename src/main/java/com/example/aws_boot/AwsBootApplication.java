@@ -4,7 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
-@EnableJpaAuditing  //jpa auditing activate
+//@EnableJpaAuditing  //jpa auditing activate
 @SpringBootApplication
 public class AwsBootApplication {
 
