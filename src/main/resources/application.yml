@@ -6,7 +6,7 @@ spring:
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     show-sql: true
   profiles:
-    include: oauth
+    include: oauth, real-db
   session:
     store-type: jdbc
   # Test OAuth
